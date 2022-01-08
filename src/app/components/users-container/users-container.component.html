@@ -1,0 +1,21 @@
+<div class="container" >
+    <app-user-filteration></app-user-filteration>
+    <app-user-card  *ngFor="let user of usersData" [user]="user"></app-user-card>
+    <div class="d-flex flex-row justify-content-between p-3" *ngIf="usersData?.length" >
+        <div class="">
+         <div class="d-flex">
+            <div class="">per page:</div>
+            <div class=""> 
+                <select class="form-select" [(ngModel)]="pageLimit" (change)="getUsers()" aria-label="select items per page">
+                    <option selected value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+                </div>
+        </div>
+        </div>
+        <div class=""> 
+            <pagination [totalItems]="totalPages" (pageChanged)="pageChanged($event)"  [maxSize]="8"></pagination>
+        </div>
+    </div>
+</div>
