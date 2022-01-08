@@ -1,0 +1,15 @@
+<div class="row w-100 rounded-1 border border-light m-3 shadow-sm ">
+    <div class="col-md-6 p-2">
+         <input class="form-control form-control-sm w-100 rounded-1" 
+         [(ngModel)]="searchfield"
+          area-label="type to search" 
+          id="searchUser" 
+          placeholder="Type to search...">
+    </div>
+    <div class="col-md-2 p-2">
+        <button class="btn btn-secondary btn-sm" (click)="search()">submit</button>
+        <button class="btn btn-link btn-sm" (click)="reset()" *ngIf="searchfield !== ''">reset</button>
+    </div>
+    <div class="col-md-2 p-2">
+    </div>
+</div>
