@@ -1,9 +1,11 @@
-<div class="d-flex flex-column w-100 rounded-1 border border-light m-3 p-2 shadow-sm">
-    <div>
-        <img class="rounded-circle shadow " [src]="user.avatar_url" [alt]="user.login" width="75" height="75" />
+<div 
+class="d-flex flex-column justify-content-center rounded-1 border border-light m-3 p-2 shadow-sm user-card" 
+style=";"  
+tooltip="Click to view user details"
+(click)="openUserDetailsModal(user)">
+        <img class="rounded-circle shadow " [src]="user.avatar_url" [alt]="user.login" width="100" height="100" />
         <span class="p-md-3"> {{user.login | titlecase}}</span>
-    </div>
-    <div class="p-2">
-        <button class="btn btn-secondary btn-sm" [disabled]="!user.html_url" (click)="navigateToUserAccount(user.html_url)">View Full Profile</button>
-    </div>
+    
+        <button class="btn btn-secondary btn-sm m-2" [disabled]="!user.html_url" (click)="navigateToUserAccount(user.html_url)">Vist</button>
+    
 </div>

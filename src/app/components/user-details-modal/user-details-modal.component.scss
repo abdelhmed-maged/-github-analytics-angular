@@ -1,0 +1,13 @@
+ul {
+    max-height: 280px;
+    overflow: hidden;
+    list-style: none;
+    padding-left: 0;
+    &:hover {
+        overflow: auto;
+    }
+    li {
+        color: rgb(31, 31, 31);
+        font-size: 12px;
+    }
+}

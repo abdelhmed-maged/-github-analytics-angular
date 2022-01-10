@@ -1,0 +1,32 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+    <div class="modal-body d-flex flex-row justify-content-between p-1">
+        <div class="d-flex flex-column p-2">
+            <strong>Followers</strong>
+            <ul *ngIf="followers?.length">
+            <li *ngFor="let follower of followers">{{follower.login}}</li>
+            </ul>
+        <strong>Total Followers: {{followers?.length}}</strong>
+    </div>
+    <div class="d-flex flex-column p-2">
+        <strong>Following</strong>
+        <ul *ngIf="following?.length">
+        <li *ngFor="let follow of following">{{follow.login}}</li>
+        </ul>
+        <strong>Total following: {{following?.length}}</strong>
+    </div>
+  </div>
+  <div class="d-flex flex-column p-2">
+      <strong>Repo</strong>
+        <ul *ngIf="repos?.length">
+        <li *ngFor="let repo of repos"><a [href]="repo.html_url" target="_blank">{{repo.name}}</a></li>
+        </ul>
+        <strong>Total Repos: {{repos?.length}}</strong>
+    </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+  </div>
