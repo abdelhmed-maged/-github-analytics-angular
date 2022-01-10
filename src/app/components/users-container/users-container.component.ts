@@ -33,12 +33,14 @@ export class UsersContainerComponent implements OnInit {
 
   getUsers() {
     this.body = {q: this.term, perPage: this.pageLimit, page: this.pageNumber }
-    this.filterUsersService.getUsersByName(this.body).toPromise().then((resp: any) => {
+    this.filterUsersService.getUsersByName(this.body).subscribe(
+      (resp: UsersData) => {
         this.usersData = resp.items!;
         this.totalPages = +resp.total_count;
-    }).catch((err: HttpErrorResponse) => {
+      }, (err: HttpErrorResponse) => {
       console.log(err.error.errors[0].message)
-    });
+    }
+  );
   }
 
   pageChanged(paginationSelection: any) {
