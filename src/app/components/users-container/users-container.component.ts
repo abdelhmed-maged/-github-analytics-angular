@@ -44,7 +44,6 @@ export class UsersContainerComponent implements OnInit {
   }
 
   pageChanged(paginationSelection: any) {
-    this.pageLimit = paginationSelection.itemsPerPage;
     this.pageNumber = paginationSelection.page;
     this.getUsers();
 

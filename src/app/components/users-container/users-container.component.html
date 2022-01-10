@@ -1,7 +1,9 @@
 <div class="container" >
     <app-user-filteration></app-user-filteration>
+    <div class="d-flex flex-row flex-wrap">
     <app-user-card  *ngFor="let user of usersData" [user]="user"></app-user-card>
-    <div class="d-flex flex-row justify-content-between p-3" *ngIf="usersData?.length" >
+    </div>
+    <div class="d-flex flex-row justify-content-between p-3" *ngIf="usersData?.length" style="border-top: 1px solid #d8d8d8;">
         <div class="">
          <div class="d-flex">
             <div class="">per page:</div>
@@ -14,6 +16,7 @@
                 </div>
         </div>
         </div>
+        <div>Total results: {{totalPages}}</div>
         <div class=""> 
             <pagination [totalItems]="totalPages" (pageChanged)="pageChanged($event)"  [maxSize]="8"></pagination>
         </div>

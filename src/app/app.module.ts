@@ -8,13 +8,17 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserFilterationComponent } from './components/user-filteration/user-filteration.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { UserDetailsModalComponent } from './components/user-details-modal/user-details-modal.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersContainerComponent,
     UserCardComponent,
-    UserFilterationComponent
+    UserFilterationComponent,
+    UserDetailsModalComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,9 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     FormsModule,
     AppRoutingModule,
     ApiModule.forRoot(),
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    TooltipModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
